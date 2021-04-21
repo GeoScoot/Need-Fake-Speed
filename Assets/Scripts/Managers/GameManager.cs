@@ -6,14 +6,19 @@ public class GameManager : MonoBehaviour
 {
     public UIManager uiManager;
     public Player player;
-
-
     Score score = new Score();
-
 
     public void HandleCollision(GameObject gameObject)
     {
-        // Здесь должен быть код, который подберет препятствие
+        if(gameObject.tag == "Bonus")
+        {
+            TakeBonus(gameObject);
+        }
+        else
+        if (gameObject.tag == "Obstacle")
+        {
+            GameOver();
+        }
     }
 
 
@@ -27,5 +32,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    private void TakeBonus(GameObject gameObject)
+    {
+        var bonus = gameObject.GetComponent<Bonus>();
+        score.points += bonus.points;
+        uiManager.RefreshUI(score);
+        Destroy(gameObject);
+    }
+    private void GameOver()
+    {
+        uiManager.StopGame();
+        player.gameOver = true;
     }
 }

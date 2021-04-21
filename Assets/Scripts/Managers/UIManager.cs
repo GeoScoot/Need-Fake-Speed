@@ -10,19 +10,19 @@ public class UIManager : MonoBehaviour
 
     public void RefreshUI(Score score)
     {
-        // Здесь должен быть код, выводящий цифры игроку в окно UI
+        pointsLabel.text = score.points.ToString();
     }
 
     public void StopGame()
     {
-
+        pointsLabel.text = "GG WP";
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pointsLabel.text = "0";
     }
 
     // Update is called once per frame

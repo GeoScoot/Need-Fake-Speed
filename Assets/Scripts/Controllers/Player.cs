@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float steeringSpeed;
     public float accBrakeSpeed;
     public float moveSpeed;
+    public bool gameOver = false;
 
     Camera cam;
 
@@ -19,6 +20,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
+        if (gameOver)
+        {
+            return;
+        }
         var inputSteer = Input.GetAxis("Horizontal");
 
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
@@ -28,5 +34,10 @@ public class Player : MonoBehaviour
         var camPosition = cam.transform.position;
         camPosition.y = transform.position.y;
         cam.transform.position = camPosition;
+ 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        gameManager.HandleCollision(other.gameObject);
     }
 }
