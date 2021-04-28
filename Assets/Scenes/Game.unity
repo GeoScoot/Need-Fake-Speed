@@ -625,7 +625,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.18039216, g: 0.1764706, b: 0.18039216, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -988,10 +988,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33087cdb8ef4c1d4b831884330652da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstPrefabs:
+  itemsPrefabs:
   - {fileID: 8820500966899602915, guid: 5bf68804f38744141a913f6377567f73, type: 3}
   - {fileID: 3565549103450128587, guid: 0f0855cf1c78ec8458e3a78e00556cb1, type: 3}
   - {fileID: 4556929669482817372, guid: 40fc02992644c3549a6309a08a79f431, type: 3}
+  - {fileID: 1656675898472448557, guid: ccff5e78a0663b8439ea3ea59394b5ae, type: 3}
+  carPrefabs:
+  - {fileID: 5711131328237449560, guid: e07a22effd4d9e545a91ee0ac6cb1d9e, type: 3}
+  - {fileID: 8186392251056527293, guid: 836ea554f62ac844e85dad91bbcd9b56, type: 3}
+  - {fileID: 4120852130721870314, guid: d9c432790fead9d44bff8b25ddc854ca, type: 3}
+  - {fileID: 1656675898472448557, guid: ccff5e78a0663b8439ea3ea59394b5ae, type: 3}
+  - {fileID: 3786805634096053071, guid: d0d931b33d860bc4e9df84571cdb6a72, type: 3}
+  - {fileID: 2574805849383700410, guid: 3dd0e5aef58352b42a31b3a1e676b610, type: 3}
+  - {fileID: 5216545029048118106, guid: d9b086d8bb87f0b48b3afc1f7a4724cc, type: 3}
+  - {fileID: 2705800462884746708, guid: 1fed672d56f3d7c4e97e11f4f16de150, type: 3}
+  - {fileID: 9054431684604550057, guid: f21568b795e827e48b1a2a9858219179, type: 3}
+  - {fileID: 1446626615630782252, guid: eebb38c9faf04b9469102a79809fe240, type: 3}
+  - {fileID: 8375311593544185856, guid: 8d93fd7ab66f88f4da7a75542faba8a9, type: 3}
 --- !u!114 &785193309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,8 +1130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 785193309}
-  steeringSpeed: 5
-  accBrakeSpeed: 5
+  offcetToCamera: 0
+  steeringSpeed: 90
+  accBrakeSpeed: 0.005
   moveSpeed: 5
   gameOver: 0
 --- !u!50 &1586852677
